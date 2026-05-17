@@ -90,6 +90,13 @@ Run migrations after PostgreSQL is available:
 alembic upgrade head
 ```
 
+Auth endpoints are available under `/auth`:
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `GET /auth/me`
+- `GET /auth/admin-only-test`
+
 ## Frontend Development
 
 ```bash
@@ -118,4 +125,3 @@ npm run typecheck
 ## Next Ticket
 
 Implement authentication and roles for `candidate`, `company_user`, `company_admin`, and `platform_admin`.
-

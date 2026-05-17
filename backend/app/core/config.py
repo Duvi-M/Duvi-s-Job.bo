@@ -15,6 +15,15 @@ class Settings(BaseSettings):
         default=["http://localhost:3000"],
         alias="BACKEND_CORS_ORIGINS",
     )
+    secret_key: str = Field(
+        default="change-me-in-local-development",
+        alias="SECRET_KEY",
+    )
+    access_token_expire_minutes: int = Field(
+        default=30,
+        alias="ACCESS_TOKEN_EXPIRE_MINUTES",
+    )
+    algorithm: str = Field(default="HS256", alias="ALGORITHM")
 
     @field_validator("backend_cors_origins", mode="before")
     @classmethod
